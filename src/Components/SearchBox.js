@@ -12,7 +12,7 @@ class SearchBox extends Component {
     const ID_KEY = 'F6suJt1MEcLU5ORW2cpz'; 
     const SECRET_KEY = 'kXGB0e4lVe';
 
-    const response =await axios.get('/api/v1/search/image.json'
+    const response = await axios.get('/api/v1/search/image.json'
           ,{ 
         params:{ 
         query  : keyWord, 
