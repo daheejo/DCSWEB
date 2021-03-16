@@ -3,9 +3,6 @@ import axios from "axios";
 
 import "../Styles/SearchBox.css"
 import "./WebTitle"
-
-안녕하세요
-
 class SearchBox extends Component {
 
   state = { value: '' };
