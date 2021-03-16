@@ -1,5 +1,6 @@
 import React, { Component } from "react";
-import { BrowserRouter  as Router, Route } from 'react-router-dom'
+
+import "../Styles/App.css"
 
 import SearchBox from "./SearchBox"
 import WebTitle from "./WebTitle"
@@ -7,9 +8,13 @@ import WebTitle from "./WebTitle"
 class Home extends Component{
   render () {
   return ( 
-    <div>
+    <div class="wrap">
+      <div class="title">
+       <WebTitle></WebTitle>
+      </div>
+      <div class="searchbox">
         <SearchBox></SearchBox>
-        <WebTitle></WebTitle>
+      </div>
     </div>
     )
   }

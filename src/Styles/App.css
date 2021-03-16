@@ -1,0 +1,16 @@
+.title{
+  margin-top: 5%;
+}
+
+.searchbox{
+  margin: 15%;
+  margin-bottom: 10%;
+}
+
+.wrap{
+  width: 700px;
+  border: rgb(56, 172, 207);
+  height: 400px;
+  margin-top: 5%;
+  margin: auto;
+}

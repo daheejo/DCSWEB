@@ -1,11 +1,12 @@
-const {createProxyMidddleware} = require('http-proxy-middleware')
+const {createProxyMiddleware} = require('http-proxy-middleware')
 
-module.exports = function (app) {
-    app.use(
-        '/api',
-        createProxyMidddleware({
-            target: 'https://openapi.naver.com/v1/search/image', image.xml
-            changeOrigin: true,
-        })
-    )
-}
+module.exports = function(app) {
+
+  app.use(
+    '/api',
+    createProxyMiddleware({
+      target: 'https://openapi.naver.com',
+      changeOrigin: true,
+    })
+  );
+};
