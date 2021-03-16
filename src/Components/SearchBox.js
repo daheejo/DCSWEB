@@ -31,7 +31,7 @@ class SearchBox extends Component {
     console.log(response)
   }
 
-  handleChange = (e : any) => {
+  handleChange = (e) => {
      this.setState({value: e.target.value}); 
      console.log(e.target.value)
      this.Search();
