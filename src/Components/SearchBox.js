@@ -9,21 +9,12 @@ class SearchBox extends Component {
 
   Search = async() => {
     const keyWord = this.state.value
-    const ID_KEY = 'F6suJt1MEcLU5ORW2cpz'; 
-    const SECRET_KEY = 'kXGB0e4lVe';
 
-    const response = await axios.get('/api/v1/search/image.json'
+    const response = await axios.get('http://localhost:3001/search'
           ,{ 
         params:{ 
-        query  : keyWord, 
-        start  :1, 
-        display:3, 
-        sort   :'sim', 
-        filter :'small'
-      }, headers: { 
-            'X-Naver-Client-Id': ID_KEY,
-            'X-Naver-Client-Secret': SECRET_KEY,
-        } 
+        query  : keyWord,
+      }, 
      });
     this.setState({value: response})
     console.log(response)
