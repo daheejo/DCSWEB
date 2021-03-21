@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const cors = require('cors');
 const bodyParser = require('body-parser');
-const port = process.env.PORT || 3001;
+const port = process.env.PORT || 3500;
 const axios = require('axios');
 
 const ID_KEY = 'F6suJt1MEcLU5ORW2cpz'; 
@@ -28,7 +28,8 @@ app.use('/search', (req, res) => {
       } 
   }).then(function(response){
     const items = response.data.items;
-    res.send({items:items});
+     console.log(word);
+    res.send(items);
   }).catch(function(error) {
     console.log(error);
   });
