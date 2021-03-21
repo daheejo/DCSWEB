@@ -14,7 +14,7 @@ class SearchBox extends Component {
   Search = async() => {
     const keyWord = this.state.value
 
-    const response = await axios.get('http://localhost:3500/search'
+    const response = await axios.get('http://localhost:3001/search'
           ,{ 
         params:{ 
         query  : keyWord,
