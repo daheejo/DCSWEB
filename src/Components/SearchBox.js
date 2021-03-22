@@ -26,7 +26,6 @@ class SearchBox extends Component {
     for (let i = 0;  i < this.state.length; i++) {
       console.log(this.state.link[i].link)
     }
-    console.log(this.state.length)
   }
 
   handleChange = (e) => {
@@ -42,6 +41,7 @@ class SearchBox extends Component {
       <div class="search">
         <input type="text" class="searchTerm" 
         placeholder="검색할 단어를 입력하세요!" onChange={this.handleChange}></input>
+        <img class="first Image" src={this.state.link[0]}/>
      </div>
     );
   }
