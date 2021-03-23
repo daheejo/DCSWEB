@@ -1,7 +1,6 @@
 const express = require('express')
 const app = express();
 const cors = require('cors');
-const bodyParser = require('body-parser');
 const port = process.env.PORT || 3500;
 const axios = require('axios');
 
@@ -9,8 +8,6 @@ const ID_KEY = 'F6suJt1MEcLU5ORW2cpz';
 const SECRET_KEY = 'kXGB0e4lVe';
 
 app.use(cors());
-
-app.use(bodyParser.json());
 
 app.use('/search', (req, res) => {
   const word = req.query.query;
@@ -33,8 +30,8 @@ app.use('/search', (req, res) => {
   }).catch(function(error) {
     console.log(error);
   });
-
 });
+
 
 app.listen(port, () => {
   console.log(`running on ${port}`)

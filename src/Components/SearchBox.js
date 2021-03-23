@@ -4,10 +4,10 @@ import axios from "axios";
 import "../Styles/SearchBox.css"
 import "./WebTitle"
 class SearchBox extends Component {
-  
+
   state={
     value:'',
-    link: '',
+    data: '',
     length: ''
   }
 
@@ -21,11 +21,11 @@ class SearchBox extends Component {
       }, 
      });
     this.setState({length: response.data.length})
-    this.setState({link: response.data})
+    this.setState({data: response.data})
 
-    for (let i = 0;  i < this.state.length; i++) {
-      console.log(this.state.link[i].link)
-    }
+    //for (let i = 0;  i < this.state.length; i++) {
+     // console.log(this.state.link[i].link)
+   // }
   }
 
   handleChange = (e) => {
@@ -34,14 +34,14 @@ class SearchBox extends Component {
      this.Search();
     };
 
-
-  
   render() {
+    let{value, data, length} = this.state
+    console.log(data[0])
       return (
       <div class="search">
         <input type="text" class="searchTerm" 
         placeholder="검색할 단어를 입력하세요!" onChange={this.handleChange}></input>
-        <img class="first Image" src={this.state.link[0]}/>
+        <img class="first Image"></img>
      </div>
     );
   }
