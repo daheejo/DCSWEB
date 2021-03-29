@@ -1,24 +1,20 @@
 import React, { Component } from "react";
 import axios from "axios";
-require('dotenv').config();
 
 import "../Styles/SearchBox.css"
 import "./WebTitle"
-
 class SearchBox extends Component {
 
   state={
     value:'',
     data: '',
-    length: ''
+    length: '',
   }
   
   Search = async() => {
     const keyWord = this.state.value
-
-    const port = process.env.PORT
-
-    const response = await axios.get(`http://ridimotion.tk:${port}/search`
+    
+    const response = await axios.get(process.env.REACT_APP_API_URL
           ,{ 
         params:{ 
         query  : keyWord,
@@ -27,10 +23,6 @@ class SearchBox extends Component {
     this.setState({length: response.data.length})
     this.setState({data: response.data})
     console.log(this.state.data[0])
-
-    //for (let i = 0;  i < this.state.length; i++) {
-     // console.log(this.state.link[i].link)
-   // }
   }
 
   handleChange = (e) => {

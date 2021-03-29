@@ -2,7 +2,9 @@ const express = require('express')
 const app = express();
 const cors = require('cors');
 const axios = require('axios');
-require('dotenv').config();
+
+import dotenv from 'dotenv'
+dotenv.config()
 
 const port = process.env.PORT
 const ID_KEY = process.env.ID_KEY
