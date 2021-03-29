@@ -1,11 +1,12 @@
 const express = require('express')
 const app = express();
 const cors = require('cors');
-const port = 3500;
 const axios = require('axios');
+require('dotenv').config();
 
-const ID_KEY = 'F6suJt1MEcLU5ORW2cpz'; 
-const SECRET_KEY = 'kXGB0e4lVe';
+const port = process.env.PORT
+const ID_KEY = process.env.ID_KEY
+const SECRET_KEY = process.env.SECRET_KEY
 
 app.use(cors());
 
