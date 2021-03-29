@@ -1,7 +1,7 @@
 const express = require('express')
 const app = express();
 const cors = require('cors');
-const port = process.env.PORT || 3500;
+const port = 3500;
 const axios = require('axios');
 
 const ID_KEY = 'F6suJt1MEcLU5ORW2cpz'; 

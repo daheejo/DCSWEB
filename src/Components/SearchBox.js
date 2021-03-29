@@ -14,7 +14,7 @@ class SearchBox extends Component {
   Search = async() => {
     const keyWord = this.state.value
 
-    const response = await axios.get('http://localhost:3500/search'
+    const response = await axios.get('http://www.ridimotion.tk:3500/search'
           ,{ 
         params:{ 
         query  : keyWord,
@@ -22,6 +22,7 @@ class SearchBox extends Component {
      });
     this.setState({length: response.data.length})
     this.setState({data: response.data})
+    console.log(this.state.data[0])
 
     //for (let i = 0;  i < this.state.length; i++) {
      // console.log(this.state.link[i].link)
@@ -36,12 +37,10 @@ class SearchBox extends Component {
 
   render() {
     let{value, data, length} = this.state
-    console.log(data[0])
       return (
       <div class="search">
         <input type="text" class="searchTerm" 
         placeholder="검색할 단어를 입력하세요!" onChange={this.handleChange}></input>
-        <img class="first Image"></img>
      </div>
     );
   }
