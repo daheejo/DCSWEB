@@ -16,11 +16,7 @@ app.use('/search', (req, res) => {
   const word = req.query.query;
   axios.get('https://openapi.naver.com/v1/search/image', {
     params:{ 
-      query  :word, 
-      start  :1, 
-      display:3, 
-      sort   :'sim', 
-      filter :'small'
+      query:word, 
     }, headers: { 
           'X-Naver-Client-Id': ID_KEY,
           'X-Naver-Client-Secret': SECRET_KEY,
@@ -30,7 +26,8 @@ app.use('/search', (req, res) => {
     const items = response.data.items;
      console.log(word);
     res.send(items);
-  }).catch(function(error) {
+  }).catch(function(error){
+    res.send(error)
     console.log(error);
   });
 });
