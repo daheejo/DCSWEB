@@ -7,36 +7,54 @@ class SearchBox extends Component {
 
   state={
     value:'',
-    data: '',
+    searchWord:'',
     length: '',
+    data: '',
+    error: ''
   }
   
   Search = async() => {
-    const keyWord = this.state.value
+    const keyWord = this.state.searchWord
     
     const response = await axios.get(process.env.REACT_APP_API_URL
           ,{ 
         params:{ 
-        query  : keyWord,
+        query:keyWord,
       }, 
      });
     this.setState({length: response.data.length})
-    this.setState({data: response.data})
-    console.log(this.state.data[0])
+
+    if(this.state.length == 10)
+    {
+      this.setState({data: response.data[0].link})
+    } else {
+      this.setState({data:'https://blog.kakaocdn.net/dn/b1LbER/btqEbP8vrCN/JX24e3Zj2Q2BfYKJo9GLdK/img.jpg'})
+      console.log(response)
+    }
+    console.log(this.state.data)
   }
 
   handleChange = (e) => {
      this.setState({value: e.target.value}); 
-     console.log(e.target.value)
-     this.Search();
     };
 
+  handleSubmit = (e) => {
+    if(e){
+      this.setState({searchWord: this.state.value})
+      console.log(this.state.searchWord)
+      this.Search();
+    }
+  }
+  
   render() {
-    let{value, data, length} = this.state
       return (
       <div class="search">
         <input type="text" class="searchTerm" 
-        placeholder="검색할 단어를 입력하세요!" onChange={this.handleChange}></input>
+        placeholder="검색할 단어를 입력하세요!" value={this.state.value} onChange={this.handleChange}></input>
+        <div class='image-display'>
+          <img src={this.state.data}></img>
+        </div>
+        <button onClick={this.handleSubmit}>검색</button>
      </div>
     );
   }
