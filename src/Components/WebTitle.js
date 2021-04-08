@@ -6,7 +6,7 @@ class WebTitle extends Component {
     render() {
       return (
         <div class='title'>
-          <h1>This is...?</h1>
+          <h1>😎Meme Finder😒</h1>
         </div>
       );
     }

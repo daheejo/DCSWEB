@@ -48,13 +48,24 @@ class SearchBox extends Component {
   
   render() {
       return (
-      <div class="search">
-        <input type="text" class="searchTerm" 
+      <div class="wrap">
+        <div class="search">
+          <input type="text" class="searchTerm" 
         placeholder="검색할 단어를 입력하세요!" value={this.state.value} onChange={this.handleChange}></input>
-        <div class='image-display'>
-          <img src={this.state.data}></img>
+          <div class='image-display' style="overflow: hidden">
+            <div class="container">
+              <div class="inner">
+              <img src={this.state.data}></img>
+              </div>
+            </div>
+            <div class="container">
+              <div class="inner">
+              <img src={this.state.data}></img>
+              </div>
+            </div>
         </div>
-        <button onClick={this.handleSubmit}>검색</button>
+        </div>
+        <div class="button" onClick={this.handleSubmit}>Find</div>
      </div>
     );
   }
