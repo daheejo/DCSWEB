@@ -51,21 +51,26 @@ class SearchBox extends Component {
       <div class="wrap">
         <div class="search">
           <input type="text" class="searchTerm" 
-        placeholder="검색할 단어를 입력하세요!" value={this.state.value} onChange={this.handleChange}></input>
-          <div class='image-display' style="overflow: hidden">
-            <div class="container">
-              <div class="inner">
-              <img src={this.state.data}></img>
-              </div>
-            </div>
-            <div class="container">
-              <div class="inner">
-              <img src={this.state.data}></img>
-              </div>
-            </div>
+        placeholder="검색할 단어를 입력하세요!" 
+        value={this.state.value} 
+        onChange={this.handleChange}
+        onKeyPress={ 
+          (e) => {
+          if(e.key === 'Enter'){ 
+            this.handleSubmit(e)
+            }
+          }
+        }>
+          </input>
+
+        <div class="button" 
+        onClick={this.handleSubmit}>
+          Find 
+          </div>
+          <div class='image-display'>
+          <img src={this.state.data}/>
+          </div>
         </div>
-        </div>
-        <div class="button" onClick={this.handleSubmit}>Find</div>
      </div>
     );
   }

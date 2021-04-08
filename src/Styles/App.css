@@ -1,5 +1,5 @@
 .title{
-  margin-top: 5%;
+  margin-top: 10px;
 }
 
 .searchbox{
@@ -8,9 +8,10 @@
 }
 
 .wrap{
+  display: flex;
+  align-items: center;
+  flex-direction: column;
   width: 700px;
-  border: rgb(56, 172, 207);
-  height: 400px;
-  margin-top: 5%;
+  height: auto;
   margin: auto;
 }
